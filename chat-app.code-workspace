@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "chat-app",
+			"path": "../chat-app"
+		}
+	],
+	"settings": {
+		"window.zoomLevel": 0
+	}
+}

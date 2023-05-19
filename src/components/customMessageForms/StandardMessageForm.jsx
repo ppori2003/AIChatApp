@@ -77,10 +77,6 @@ const StandardMessageForm = ({ props, activeChat }) => {
               handleSubmit();
             }}
           />
-
-          
-
-          
         </div>
       </div>
     </div>

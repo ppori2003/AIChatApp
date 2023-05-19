@@ -20,7 +20,7 @@ const StandardMessageForm = ({ props, activeChat }) => {
     setMessage("");
     setAttachment("");
 
-  }
+  };
 
   return (
     <MessageFormUI

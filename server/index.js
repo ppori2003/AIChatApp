@@ -30,7 +30,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 /* ROUTES */
-app.use('/openai', openAiRoutes);
+app.use("/openai", openAiRoutes);
 
 
 

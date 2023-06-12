@@ -2,7 +2,7 @@ import { usePostAiAssistMutation } from "@/state/api";
 import React, { useEffect, useState } from "react";
 import MessageFormUI from "./MessageFormUI";
 
-function useDebounce(value, delay) {
+function useDebounce(value, delay) { // Set delay on the auto complete 
   const [debouncedValue, setDebouncedValue] = useState(value);
 
   useEffect(() => {

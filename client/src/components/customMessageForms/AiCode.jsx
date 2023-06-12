@@ -27,7 +27,7 @@ const AiCode = ( {props, activeChat }) => {
     props.onSubmit(form);
     trigger(form); // trigger api call
     setMessage("");
-    setAttachment("");
+    setAttachment(""); 
 
   };
 

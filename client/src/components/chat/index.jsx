@@ -12,7 +12,6 @@ import AiAssist from "@/components/customMessageForms/AiAssist"
 const Chat = ({ user, secret }) => {
   const chatProps = useMultiChatLogic(
     import.meta.env.VITE_PROJECT_ID,
-    //"f8c570b5-e6c9-4288-9603-a0bb20d080ec",
     user,
     secret
   );
@@ -25,16 +24,16 @@ const Chat = ({ user, secret }) => {
         style={{ height: "100vh" }}
         renderChatHeader={(chat) => <Header chat={chat} />}
         renderMessageForm={(props) => {
-          if (chatProps.chat?.title.startsWith("AiChat_")) {
-            return <Ai props={props} activeChat={chatProps.chat} />;
-          }
-          if (chatProps.chat?.title.startsWith("AiCode_")) {
+          
+          if (chatProps.chat?.title.startsWith("AiCode")) {
             return <AiCode props={props} activeChat={chatProps.chat} />;
           }
-          if (chatProps.chat?.title.startsWith("AiAssist_")) {
+          if (chatProps.chat?.title.startsWith("AiAssist")) {
             return <AiAssist props={props} activeChat={chatProps.chat} />;
           }
-        
+          else if (chatProps.chat?.title.startsWith("")) {
+            return <Ai props={props} activeChat={chatProps.chat} />;
+          }
         
           return (
             <StandardMessageForm props={props} activeChat={chatProps.chat} />

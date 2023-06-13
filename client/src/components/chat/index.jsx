@@ -13,8 +13,8 @@ const Chat = ({ user, secret }) => {
   const chatProps = useMultiChatLogic(
     import.meta.env.VITE_PROJECT_ID,
     //"f8c570b5-e6c9-4288-9603-a0bb20d080ec",
-    "testuser",
-    "1234"
+    user,
+    secret
   );
 
   return (

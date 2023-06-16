@@ -13,7 +13,6 @@ router.post("/login", async (req, res) => {
       "https://api.chatengine.io/users/me",
       {
         headers: {
-          "Access-Control-Allow-Origin": 'http://localhost:5173',
           "Project-ID": process.env.PROJECT_ID,
           "User-Name": username,
           "User-Secret": password,

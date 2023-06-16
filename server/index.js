@@ -18,6 +18,11 @@ app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+  // Add other CORS headers if needed
+  next();
+});
 
 /* OPEN AI CONFIGURATION */
 const configuration = new Configuration({

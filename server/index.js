@@ -14,11 +14,6 @@ import authRoutes from "./routes/auth.js";
 /* CONFIGURATIONS */
 dotenv.config();
 const app = express();
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
-  // Add other CORS headers if needed
-  next();
-});
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
@@ -33,6 +28,13 @@ const configuration = new Configuration({
   apiKey: process.env.OPEN_API_KEY,
 });
 export const openai = new OpenAIApi(configuration);
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+  // Add other CORS headers if needed
+  console.log("we are here");
+  next();
+});
 
 /* ROUTES */
 app.use("/openai", openAiRoutes);
